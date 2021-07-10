@@ -20,9 +20,61 @@ header[role=banner] {
     background-color: black;
 }
 
+abbr {
+    text-decoration: none;
+}
+
 .summary {
     background-color: white;
     text-align: center;
-    padding: 10px;
+    padding: 50px;
     font-size: 1.25em;
+}
+
+.preamble {
+    color: white;
+    background-color: rgb(31, 81, 161);
+    width: 75%;
+    padding: 3em;
+
+    h3 {
+        padding-left: 0.5em;
+        font-size: 2.5em;
+    }
+
+    p {
+        padding-left: 4em;
+    }
+}
+
+#zen-supporting {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    .explanation {
+        text-align: right;
+        padding: 3em;
+        background-color: white;
+    }
+    .participation, .benefits, .requirements{
+        padding: 4em;
+        h3 {
+            text-align: center;
+        }
+    }
+}
+
+.main > div:not(#zen-explanation){
+    flex-basis: 25%;
+    align-items: center;
+}
+
+.explanation h3 {
+    font-size: 2.5em;
+    padding-right: 0.5em;
+}
+
+.explanation p {
+    padding-right: 4em;
 }

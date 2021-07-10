@@ -17,11 +17,61 @@ header[role=banner] {
   background-color: black;
 }
 
+abbr {
+  text-decoration: none;
+}
+
 .summary {
   background-color: white;
   text-align: center;
-  padding: 10px;
+  padding: 50px;
   font-size: 1.25em;
+}
+
+.preamble {
+  color: white;
+  background-color: #1f51a1;
+  width: 75%;
+  padding: 3em;
+}
+.preamble h3 {
+  padding-left: 0.5em;
+  font-size: 2.5em;
+}
+.preamble p {
+  padding-left: 4em;
+}
+
+#zen-supporting {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+#zen-supporting .explanation {
+  text-align: right;
+  padding: 3em;
+  background-color: white;
+}
+#zen-supporting .participation, #zen-supporting .benefits, #zen-supporting .requirements {
+  padding: 4em;
+}
+#zen-supporting .participation h3, #zen-supporting .benefits h3, #zen-supporting .requirements h3 {
+  text-align: center;
+}
+
+.main > div:not(#zen-explanation) {
+  flex-basis: 25%;
+  align-items: center;
+}
+
+.explanation h3 {
+  font-size: 2.5em;
+  padding-right: 0.5em;
+}
+
+.explanation p {
+  padding-right: 4em;
 }
 
 /*# sourceMappingURL=style.css.map */
