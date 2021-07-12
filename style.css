@@ -8,70 +8,230 @@ body {
   background-color: whitesmoke;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #00ffc8;
+  transition: 0.25s;
+  font-style: italic;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h3:not(.select):not(.archives):not(.resources) {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+h3:not(.select):not(.archives):not(.resources) h3:not(.preamble) {
+  color: black;
+}
+
+li {
+  padding: 5px;
+}
+
 header[role=banner] {
+  font-style: italic;
+  text-transform: uppercase;
   text-align: center;
   font-size: 2.5em;
-  padding: 20px;
+  padding: 1em;
   letter-spacing: 0.2em;
   color: white;
-  background-color: black;
+  background-color: #1B262C;
+  height: 19em;
+}
+header[role=banner] h1, header[role=banner] h2 {
+  animation: fadeIn linear 1.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+::selection {
+  background: #00f7ff;
+  color: black;
+}
+
+.intro h1, .intro h2 {
+  position: absolute;
+  top: 4em;
+  padding-left: 1em;
+  font-size: 1.5em;
+}
+.intro h2 {
+  top: 6em;
 }
 
 abbr {
   text-decoration: none;
+  font-weight: bold;
 }
 
 .summary {
   background-color: white;
   text-align: center;
-  padding: 50px;
+  padding: 2em;
   font-size: 1.25em;
+  height: 10em;
+}
+.summary a {
+  color: #DE1D8D;
 }
 
 .preamble {
+  box-shadow: #c3c3c3 10px 10px;
+  position: absolute;
+  top: 65em;
+  left: 10%;
+  border-radius: 10px;
   color: white;
-  background-color: #1f51a1;
+  background-color: #0F4C75;
   width: 75%;
   padding: 3em;
 }
 .preamble h3 {
   padding-left: 0.5em;
-  font-size: 2.5em;
 }
 .preamble p {
   padding-left: 4em;
 }
 
 #zen-supporting {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  position: relative;
+}
+#zen-supporting p:not(p[role=contentinfo]) {
+  color: #666;
 }
 #zen-supporting .explanation {
-  text-align: right;
+  margin-top: 25em;
+  text-align: left;
   padding: 3em;
   background-color: white;
 }
-#zen-supporting .participation, #zen-supporting .benefits, #zen-supporting .requirements {
-  padding: 4em;
-}
-#zen-supporting .participation h3, #zen-supporting .benefits h3, #zen-supporting .requirements h3 {
+#zen-supporting .explanation h3 {
+  width: 100%;
   text-align: center;
 }
+#zen-supporting .participation, #zen-supporting .benefits {
+  flex: 1;
+  padding: 4em;
+}
+#zen-supporting .participation h3, #zen-supporting .benefits h3 {
+  text-align: center;
+}
+#zen-supporting .participation {
+  background-color: #DFEEEA;
+  width: 60%;
+  float: left;
+}
+#zen-supporting .participation a {
+  color: #DE1D8D;
+}
+#zen-supporting .benefits {
+  background-color: #E6C4C0;
+}
+#zen-supporting footer {
+  text-align: center;
+  padding: 8em 0 8em 0;
+  background-color: black;
+  width: 100%;
+}
+#zen-supporting footer a {
+  display: inline;
+  color: white;
+  margin: 0 1em;
+  border: solid 2px;
+  border-radius: 10px;
+  padding: 0.25em 1em;
+}
+#zen-supporting footer a:hover {
+  color: #00ffc8;
+  transition: 0.5s;
+}
 
-.main > div:not(#zen-explanation) {
-  flex-basis: 25%;
-  align-items: center;
+.explanation p:not(h3) {
+  flex: 1;
+  background-color: white;
+  margin: 0.5em;
+  border-radius: 10px;
 }
 
 .explanation h3 {
-  font-size: 2.5em;
   padding-right: 0.5em;
 }
-
-.explanation p {
+.explanation h3 p {
   padding-right: 4em;
+}
+
+.requirements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto 0 auto;
+}
+.requirements p {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2em;
+}
+.requirements h3 {
+  width: 100%;
+  text-align: center;
+}
+.requirements a {
+  color: #DE1D8D;
+}
+
+.requirements p:not(h3):nth-child(-n+5) {
+  box-shadow: #c3c3c3 10px 10px;
+  flex: 1;
+  background-color: white;
+  margin: 1em;
+  border-radius: 10px;
+}
+
+p[role=contentinfo] {
+  width: 90%;
+  color: white;
+  position: relative;
+  top: 8em;
+}
+p[role=contentinfo] a {
+  color: #DE1D8D;
+}
+
+aside {
+  position: absolute;
+  top: 0;
+  background-color: #3282B8;
+  left: 70%;
+  padding: 1em;
+  width: 20%;
+  animation: slide-out 2s forwards;
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

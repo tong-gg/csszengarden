@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 $font-stack: 'Poppins', 'sans-serif';
+$border-radius: 10px;
+$h3: 2.5em;
+$box-shadow: #c3c3c3 10px 10px;
+$header-background: #1B262C;
+$aside-background: #3282B8;
+$preamble-background: #0F4C75;
+$benefit-background: #E6C4C0;
+$participation-background: #DFEEEA;
 
 body {
     font-family: $font-stack;
@@ -11,35 +19,102 @@ body {
     background-color: whitesmoke;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: rgb(0, 255, 200);
+    transition: 0.25s;
+    font-style: italic;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h3:not(.select):not(.archives):not(.resources){
+    font-size: $h3;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    h3:not(.preamble) {
+        color: black;
+    }
+}
+
+
+li {
+    padding: 5px;
+}
+
 header[role=banner] {
+    h1, h2 {
+        animation: fadeIn linear 1.5s;
+    }
+    font-style: italic;
+    text-transform: uppercase;
     text-align: center;
     font-size: 2.5em;
-    padding: 20px;
+    padding: 1em;
     letter-spacing: 0.2em;
     color: white;
-    background-color: black;
+    background-color: $header-background;
+    height: 19em;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;};
+    100% {opacity: 1;}
+}
+
+::selection {
+    background: rgb(0, 247, 255);
+    color: black;
+}
+
+.intro {
+    h1, h2 {
+        position: absolute;
+        top: 4em;
+        padding-left: 1em;
+        font-size: 1.5em;
+    }
+    h2 {
+        top: 6em;
+    }
 }
 
 abbr {
     text-decoration: none;
+    // color: #1d61de;
+    font-weight: bold;
 }
 
 .summary {
     background-color: white;
     text-align: center;
-    padding: 50px;
+    padding: 2em;
     font-size: 1.25em;
+    height: 10em;
+    a {
+        color: #DE1D8D;
+    }
 }
 
 .preamble {
+    box-shadow: $box-shadow;
+    position: absolute;
+    top: 65em;
+    left: 10%;
+    border-radius: $border-radius;
     color: white;
-    background-color: rgb(31, 81, 161);
+    background-color: $preamble-background;
     width: 75%;
     padding: 3em;
 
     h3 {
         padding-left: 0.5em;
-        font-size: 2.5em;
     }
 
     p {
@@ -47,34 +122,127 @@ abbr {
     }
 }
 
-#zen-supporting {
+#zen-supporting{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    position: relative;
+    p:not(p[role=contentinfo]){
+        color: #666;
+    }
     .explanation {
-        text-align: right;
+        margin-top: 25em;
+        text-align: left;
         padding: 3em;
         background-color: white;
+        h3 {
+            width: 100%;
+            text-align: center;
+        }
     }
-    .participation, .benefits, .requirements{
+    .participation, .benefits {
+        flex: 1;
         padding: 4em;
         h3 {
             text-align: center;
         }
     }
+    .participation {
+        background-color: $participation-background;
+        width: 60%;
+        float: left;
+        a {
+            color: #DE1D8D;
+        }
+    }
+
+    .benefits {
+        background-color: $benefit-background;
+    }
+
+    footer {
+        text-align: center;
+        padding: 8em 0 8em 0;
+        background-color: black;
+        width: 100%;
+        a {
+            display: inline;
+            color: white;
+            margin: 0 1em;
+            border: solid 2px;
+            border-radius: 10px;
+            padding: 0.25em 1em;
+        }
+        a:hover {
+            color: rgb(0, 255, 200);
+            transition: 0.5s;
+        }
+    }
 }
 
-.main > div:not(#zen-explanation){
-    flex-basis: 25%;
-    align-items: center;
+.explanation p:not(h3){
+    flex: 1;
+    background-color: white;
+    margin: 0.5em;
+    border-radius: $border-radius;
 }
 
 .explanation h3 {
-    font-size: 2.5em;
     padding-right: 0.5em;
+    p {
+        padding-right: 4em;
+    }
 }
 
-.explanation p {
-    padding-right: 4em;
+.requirements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto 0 auto;
+    p {
+        display: inline-block;
+        align-self: flex-start;
+        padding: 2em;
+    }
+    h3 {
+        width: 100%;
+        text-align: center;
+    }
+    a {
+        color: #DE1D8D;
+    }
+
+}
+
+.requirements p:not(h3):nth-child(-n+5){
+    box-shadow: $box-shadow;
+    flex: 1;
+    background-color: white;
+    margin: 1em;
+    border-radius: $border-radius;
+}
+
+p[role=contentinfo]{
+    width: 90%;
+    color: white;
+    position: relative;
+    top: 8em;
+    a {
+        color: #DE1D8D;
+    }
+}
+
+aside {
+    position: absolute;
+    top: 0;
+    background-color: $aside-background;
+    left: 70%;
+    padding: 1em;
+    width: 20%;
+    animation: slide-out 2s forwards;
+}
+
+@keyframes slide-out {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0%); }
 }
